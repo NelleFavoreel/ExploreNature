@@ -14,6 +14,14 @@
 		480C5C3B2BB70C3B0041BAB6 /* EindopdrachtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C5C3A2BB70C3B0041BAB6 /* EindopdrachtTests.swift */; };
 		480C5C452BB70C3B0041BAB6 /* EindopdrachtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C5C442BB70C3B0041BAB6 /* EindopdrachtUITests.swift */; };
 		480C5C472BB70C3B0041BAB6 /* EindopdrachtUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C5C462BB70C3B0041BAB6 /* EindopdrachtUITestsLaunchTests.swift */; };
+		480C5C552BB70D600041BAB6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C5C542BB70D600041BAB6 /* MapView.swift */; };
+		4854FAE52BBECEB200EFA662 /* ParkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854FAE42BBECEB200EFA662 /* ParkList.swift */; };
+		4854FAE82BBED02600EFA662 /* ParkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854FAE72BBED02600EFA662 /* ParkInfo.swift */; };
+		4854FAEA2BBED29200EFA662 /* ParkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854FAE92BBED29200EFA662 /* ParkDetail.swift */; };
+		48A01DAA2BC8019E00806297 /* AcountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A01DA92BC8019E00806297 /* AcountPage.swift */; };
+		48A01DAC2BC80A3A00806297 /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A01DAB2BC80A3A00806297 /* EditAccountView.swift */; };
+		48A01DAE2BC8108A00806297 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A01DAD2BC8108A00806297 /* ImagePickerView.swift */; };
+		48B682562BC421DB006E30F3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B682552BC421DB006E30F3 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,15 @@
 		480C5C402BB70C3B0041BAB6 /* EindopdrachtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EindopdrachtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		480C5C442BB70C3B0041BAB6 /* EindopdrachtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EindopdrachtUITests.swift; sourceTree = "<group>"; };
 		480C5C462BB70C3B0041BAB6 /* EindopdrachtUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EindopdrachtUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		480C5C532BB70C480041BAB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		480C5C542BB70D600041BAB6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		4854FAE42BBECEB200EFA662 /* ParkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkList.swift; sourceTree = "<group>"; };
+		4854FAE72BBED02600EFA662 /* ParkInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkInfo.swift; sourceTree = "<group>"; };
+		4854FAE92BBED29200EFA662 /* ParkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDetail.swift; sourceTree = "<group>"; };
+		48A01DA92BC8019E00806297 /* AcountPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcountPage.swift; sourceTree = "<group>"; };
+		48A01DAB2BC80A3A00806297 /* EditAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
+		48A01DAD2BC8108A00806297 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		48B682552BC421DB006E30F3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +111,10 @@
 		480C5C282BB70C3A0041BAB6 /* Eindopdracht */ = {
 			isa = PBXGroup;
 			children = (
+				4854FAE62BBECFEF00EFA662 /* Model */,
+				480C5C532BB70C480041BAB6 /* Info.plist */,
 				480C5C292BB70C3A0041BAB6 /* EindopdrachtApp.swift */,
-				480C5C2B2BB70C3A0041BAB6 /* ContentView.swift */,
+				4854FAE32BBECE1C00EFA662 /* View */,
 				480C5C2D2BB70C3B0041BAB6 /* Assets.xcassets */,
 				480C5C2F2BB70C3B0041BAB6 /* Preview Content */,
 			);
@@ -125,6 +144,29 @@
 				480C5C462BB70C3B0041BAB6 /* EindopdrachtUITestsLaunchTests.swift */,
 			);
 			path = EindopdrachtUITests;
+			sourceTree = "<group>";
+		};
+		4854FAE32BBECE1C00EFA662 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4854FAE92BBED29200EFA662 /* ParkDetail.swift */,
+				480C5C542BB70D600041BAB6 /* MapView.swift */,
+				480C5C2B2BB70C3A0041BAB6 /* ContentView.swift */,
+				4854FAE42BBECEB200EFA662 /* ParkList.swift */,
+				48A01DA92BC8019E00806297 /* AcountPage.swift */,
+				48A01DAB2BC80A3A00806297 /* EditAccountView.swift */,
+				48A01DAD2BC8108A00806297 /* ImagePickerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4854FAE62BBECFEF00EFA662 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4854FAE72BBED02600EFA662 /* ParkInfo.swift */,
+				48B682552BC421DB006E30F3 /* ViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +300,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				480C5C2C2BB70C3A0041BAB6 /* ContentView.swift in Sources */,
+				480C5C552BB70D600041BAB6 /* MapView.swift in Sources */,
+				48A01DAA2BC8019E00806297 /* AcountPage.swift in Sources */,
+				48A01DAC2BC80A3A00806297 /* EditAccountView.swift in Sources */,
+				48A01DAE2BC8108A00806297 /* ImagePickerView.swift in Sources */,
+				4854FAE82BBED02600EFA662 /* ParkInfo.swift in Sources */,
 				480C5C2A2BB70C3A0041BAB6 /* EindopdrachtApp.swift in Sources */,
+				4854FAEA2BBED29200EFA662 /* ParkDetail.swift in Sources */,
+				4854FAE52BBECEB200EFA662 /* ParkList.swift in Sources */,
+				48B682562BC421DB006E30F3 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +474,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Eindopdracht/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Eindopdracht/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -452,6 +503,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Eindopdracht/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Eindopdracht/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
