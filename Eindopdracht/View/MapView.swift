@@ -10,6 +10,8 @@
 import SwiftUI
 import MapKit
  
+let locationManager = CLLocationManager()
+
 struct MapView: View {
     @StateObject var viewModel = ViewModel()
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50.8503, longitude: 4.3517), span: MKCoordinateSpan(latitudeDelta: 3.0, longitudeDelta: 3.0))
@@ -20,17 +22,24 @@ struct MapView: View {
         ZStack {
             Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: $userTrackingMode, annotationItems: viewModel.posts) { park in
                 MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(park.lat) ?? 0, longitude: Double(park.long) ?? 0)) {
-                    Image(systemName: "tree.fill")                        .resizable()
+                    Image(systemName: "tree.fill")
+                        .resizable()
                         .foregroundColor(Color.green)
                         .frame(width: 30, height: 30)
                         .onTapGesture {
-                            selectedPark = park
+                            self.selectedPark = park // Gebruik `self` voor `selectedPark`
                         }
                 }
+                
             }
-            .padding(.top, -100.0)
+            .padding(.top, -200.0)
+            
+            
+            .edgesIgnoringSafeArea(.all)
+            .frame(height: 700.0)
             .onAppear {
                 viewModel.fetchPosts()
+                locationManager.requestWhenInUseAuthorization()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
 
@@ -38,7 +47,7 @@ struct MapView: View {
                 VStack {
                     HStack {
                         Button(action: {
-                            selectedPark = nil
+                            self.selectedPark = nil // Gebruik `self` voor `selectedPark`
                         }) {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(.red)
@@ -59,14 +68,13 @@ struct MapView: View {
                     .padding()
                 }
                 .onTapGesture {
-                    selectedPark = nil
+                    self.selectedPark = nil // Gebruik `self` voor `selectedPark`
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
             }
         }
     }
 }
-
 
 
 

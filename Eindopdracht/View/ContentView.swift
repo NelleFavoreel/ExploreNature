@@ -25,8 +25,11 @@ struct ContentView: View {
                 Label("Account", systemImage: "person.crop.circle")
             }.tag(3)
         }
+        .accentColor(.blue)
+        .background(Color.red)
     }
 }
+
 
 #Preview {
     ContentView()

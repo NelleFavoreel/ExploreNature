@@ -9,6 +9,9 @@
 import MapKit
 import SwiftUI
 
+
+
+
 struct ParkDetail: View {
     var park: ParkInfo // Assuming ParkInfo is the model for park details
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.39135358516022, longitude: 4.466165866998104), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
