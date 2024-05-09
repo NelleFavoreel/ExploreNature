@@ -15,6 +15,8 @@
 		480C5C452BB70C3B0041BAB6 /* EindopdrachtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C5C442BB70C3B0041BAB6 /* EindopdrachtUITests.swift */; };
 		480C5C472BB70C3B0041BAB6 /* EindopdrachtUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C5C462BB70C3B0041BAB6 /* EindopdrachtUITestsLaunchTests.swift */; };
 		480C5C552BB70D600041BAB6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C5C542BB70D600041BAB6 /* MapView.swift */; };
+		481AF6232BED2E45006764ED /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AF6222BED2E45006764ED /* LocalDataService.swift */; };
+		481AF6252BED2E6C006764ED /* ParkInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AF6242BED2E6C006764ED /* ParkInfoViewModel.swift */; };
 		4854FAE52BBECEB200EFA662 /* ParkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854FAE42BBECEB200EFA662 /* ParkList.swift */; };
 		4854FAE82BBED02600EFA662 /* ParkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854FAE72BBED02600EFA662 /* ParkInfo.swift */; };
 		4854FAEA2BBED29200EFA662 /* ParkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854FAE92BBED29200EFA662 /* ParkDetail.swift */; };
@@ -54,6 +56,8 @@
 		480C5C462BB70C3B0041BAB6 /* EindopdrachtUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EindopdrachtUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		480C5C532BB70C480041BAB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		480C5C542BB70D600041BAB6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		481AF6222BED2E45006764ED /* LocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataService.swift; sourceTree = "<group>"; };
+		481AF6242BED2E6C006764ED /* ParkInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkInfoViewModel.swift; sourceTree = "<group>"; };
 		4854FAE42BBECEB200EFA662 /* ParkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkList.swift; sourceTree = "<group>"; };
 		4854FAE72BBED02600EFA662 /* ParkInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkInfo.swift; sourceTree = "<group>"; };
 		4854FAE92BBED29200EFA662 /* ParkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDetail.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 			children = (
 				4854FAE72BBED02600EFA662 /* ParkInfo.swift */,
 				48B682552BC421DB006E30F3 /* ViewModel.swift */,
+				481AF6222BED2E45006764ED /* LocalDataService.swift */,
+				481AF6242BED2E6C006764ED /* ParkInfoViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +308,8 @@
 				480C5C2C2BB70C3A0041BAB6 /* ContentView.swift in Sources */,
 				480C5C552BB70D600041BAB6 /* MapView.swift in Sources */,
 				48A01DAA2BC8019E00806297 /* AcountPage.swift in Sources */,
+				481AF6232BED2E45006764ED /* LocalDataService.swift in Sources */,
+				481AF6252BED2E6C006764ED /* ParkInfoViewModel.swift in Sources */,
 				48A01DAC2BC80A3A00806297 /* EditAccountView.swift in Sources */,
 				48A01DAE2BC8108A00806297 /* ImagePickerView.swift in Sources */,
 				4854FAE82BBED02600EFA662 /* ParkInfo.swift in Sources */,

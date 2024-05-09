@@ -19,7 +19,8 @@ struct AccountPage: View {
     @State private var displayedCity = "New York"
     @State private var profileImage: UIImage? = nil
     @State private var isShowingImagePicker = false
-
+    var lastUpdatedDate: Date?
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -49,7 +50,7 @@ struct AccountPage: View {
                 Text(displayedName)
                     .font(.largeTitle)
                     .padding()
-
+                
                 VStack(alignment: .leading) {
                     HStack {
                         Text("Gegevens")
@@ -89,11 +90,23 @@ struct AccountPage: View {
                     .padding(.top, 20)
                 }
                 .padding()
-            
+                if let lastUpdatedDate = lastUpdatedDate {
+                    Text("Laatst bijgewerkt: \(formattedLastUpdatedDate(date: lastUpdatedDate))")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                        .padding()
+                }
                 Spacer()
             }
             .navigationTitle("Account")
         }
+    }
+    // Methode om de datum op een geschikte manier weer te geven
+    private func formattedLastUpdatedDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        return formatter.string(from: date)
     }
 }
 

@@ -11,7 +11,7 @@ import SwiftUI
 
 
 struct ParkList: View {
-    @StateObject var viewModel = ViewModel()
+    @StateObject var viewModel = ParkInfoViewModel()
 
     var body: some View {
         NavigationView {
@@ -30,8 +30,6 @@ struct ParkList: View {
         }
     }
 }
-
-
 
 
 #Preview {

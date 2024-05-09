@@ -7,17 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "24616295-7F56-4173-BBB0-7E253F58903E"
-            shouldBeEnabled = "No"
+            uuid = "CC4C2F12-7A8E-4DB1-97F1-EA47FA2856C1"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Eindopdracht/Model/ViewModel.swift"
+            filePath = "Eindopdracht/Model/LocalDataService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "fetchPosts()"
-            landmarkType = "7">
+            startingLineNumber = "31"
+            endingLineNumber = "31">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
