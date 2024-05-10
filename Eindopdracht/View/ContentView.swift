@@ -10,6 +10,8 @@ import MapKit
 import Network
 
 struct ContentView: View {
+    @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
+
     @State private var selectionTab = 1
     @State private var isWiFiConnected = true // State variabele voor wifi-verbinding
     @State private var previousWiFiStatus = true // Vorige wifi-status om verandering te detecteren
@@ -17,30 +19,38 @@ struct ContentView: View {
     @State private var lastUpdatedDate: Date? // State variabele voor de laatst bijgewerkte datum
     
     var body: some View {
-        TabView(selection: $selectionTab){
-            MapView().tabItem {
-                Label("Map", systemImage: "map")
-            }.tag(1)
-            
-            ParkList().tabItem {
-                Label("List", systemImage: "list.bullet")
-            }.tag(2)
-            
-            AccountPage(lastUpdatedDate: lastUpdatedDate).tabItem { // Doorgeven van de laatst bijgewerkte datum aan de AccountPage
-                Label("Account", systemImage: "person.crop.circle")
-            }.tag(3)
-        }
-        .accentColor(.blue)
-        .alert(isPresented: $showingAlert) {
-            Alert(
-                title: Text("Geen WiFi-verbinding"),
-                message: Text("Er is geen WiFi-verbinding beschikbaar."),
-                dismissButton: .default(Text("OK"))
-            )
-        }
-        .onAppear {
-            // Start met het controleren van de netwerkstatus
-            checkNetworkStatus()
+            Group {
+                if isFirstLaunch {
+                    WelcomeView {
+                        isFirstLaunch = false
+                    }
+                } else {
+                    TabView(selection: $selectionTab){
+                        MapView().tabItem {
+                            Label("Map", systemImage: "map")
+                        }.tag(1)
+                        
+                        ParkList().tabItem {
+                            Label("List", systemImage: "list.bullet")
+                        }.tag(2)
+                        
+                        AccountPage(lastUpdatedDate: lastUpdatedDate).tabItem { // Doorgeven van de laatst bijgewerkte datum aan de AccountPage
+                                        Label("Account", systemImage: "person.crop.circle")
+                                    }.tag(3)
+                    }
+                .accentColor(.blue)
+                .alert(isPresented: $showingAlert) {
+                    Alert(
+                        title: Text("Geen WiFi-verbinding"),
+                        message: Text("Er is geen WiFi-verbinding beschikbaar."),
+                        dismissButton: .default(Text("OK"))
+                    )
+                }
+                .onAppear {
+                    // Start met het controleren van de netwerkstatus
+                    checkNetworkStatus()
+                }
+            }
         }
     }
     

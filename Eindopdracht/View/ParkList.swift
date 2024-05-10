@@ -19,6 +19,7 @@ struct ParkList: View {
                 NavigationLink(destination: ParkDetail(park: park)) {
                     VStack(alignment: .leading) {
                         Text(park.name)
+                        
                         Text(park.city_name)
                     }
                 }
@@ -30,7 +31,6 @@ struct ParkList: View {
         }
     }
 }
-
 
 #Preview {
     ParkList()

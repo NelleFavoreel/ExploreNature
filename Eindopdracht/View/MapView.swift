@@ -53,13 +53,14 @@ struct MapView: View {
                                 .foregroundColor(.red)
                                 .padding()
                         }
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text(park.name)
                                 .font(.headline)
                             Text(park.city_name)
                                 .font(.subheadline)
                                 .multilineTextAlignment(.leading)
                         }
+                        .frame(width: 250.0)
                     }
                     .padding()
                     .background(Color.white)
