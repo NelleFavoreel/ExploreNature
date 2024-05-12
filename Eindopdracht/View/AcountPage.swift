@@ -83,11 +83,6 @@ struct AccountPage: View {
                             Text(city)
                         }
                     }
-                    HStack{
-                        Text("Favorieten:")
-                            .font(.title)
-                    }
-                    .padding(.top, 20)
                 }
                 .padding()
                 if let lastUpdatedDate = lastUpdatedDate {

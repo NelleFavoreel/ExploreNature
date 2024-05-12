@@ -44,7 +44,7 @@ struct MapView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             if let park = selectedPark {
-                VStack {
+                VStack() {
                     HStack {
                         Button(action: {
                             self.selectedPark = nil // Gebruik `self` voor `selectedPark`
