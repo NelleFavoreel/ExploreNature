@@ -19,8 +19,10 @@ struct ParkList: View {
                 NavigationLink(destination: ParkDetail(park: park)) {
                     VStack(alignment: .leading) {
                         Text(park.name)
-                        
+                            .font(.title3)
+                            .foregroundColor(Color.green)
                         Text(park.city_name)
+                            .font(.callout)
                     }
                 }
             }

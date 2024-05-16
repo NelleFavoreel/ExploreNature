@@ -6,7 +6,5 @@
 	<string>Dit toelaten aub</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Dit toelaten aub</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Toegang tot fotos</string>
 </dict>
 </plist>

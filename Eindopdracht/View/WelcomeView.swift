@@ -12,11 +12,13 @@ struct WelcomeView: View {
     var onDiscover: () -> Void // Closure toegevoegd om te worden aangeroepen wanneer de gebruiker op de knop klikt
 
     var body: some View {
+        Image("logo2")
         VStack {
-            Text("Welkom bij de app!")
+            
+            Text("Welkom bij NatureExplorer!")
                 .font(.title)
                 .padding()
-            Text("Dit is een geweldige app waar je alles kunt vinden wat je nodig hebt.")
+            Text("In deze appp kan je verschillende leuke parken terug vinden voor mensen met een beperking.")
                 .multilineTextAlignment(.center)
                 .padding()
             Button(action: {
@@ -25,10 +27,15 @@ struct WelcomeView: View {
             }) {
                 Text("Ontdek de app")
                     .padding()
-                    .background(Color.blue)
+                    .background(Color.green)
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }
         }
+    }
+    
+}
+#Preview{
+    WelcomeView{
     }
 }

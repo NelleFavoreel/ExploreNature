@@ -12,7 +12,7 @@ struct EditAccountView: View {
     @Binding var name: String
     @Binding var lastName: String
     @Binding var city: String
-    let onSave: () -> Void // Closure om te worden aangeroepen wanneer op "Save" wordt gedrukt
+    let onSave: () -> Void
 
     var body: some View {
         VStack {
@@ -32,7 +32,6 @@ struct EditAccountView: View {
             Spacer()
 
             Button("Save") {
-                // Roep de onSave-closure aan om wijzigingen op te slaan
                 onSave()
             }
         }

@@ -17,18 +17,18 @@ struct ParkDetail: View {
             VStack(spacing: 20) {
                 Text(park.name)
                     .font(.title)
-                    .foregroundColor(.primary)
+                    .foregroundColor(.green)
                     .multilineTextAlignment(.center)
                 Text(park.city_name)
                     .font(.headline)
                     .foregroundColor(.secondary)
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Info")
+                    Text("Info:")
                         .font(.headline)
                     Text(park.product_description)
                         .foregroundColor(.secondary)
-                    Text("Extra")
+                    Text("Extra:")
                         .font(.headline)
                     Text(park.extra_facilities)
                         .foregroundColor(.secondary)
@@ -60,9 +60,9 @@ struct ParkDetail: View {
                     HStack {
                         Text("Voeg foto toe:")
                             .font(.headline)
-                            .foregroundColor(.primary)
+                            .foregroundColor(.white)
                         Image(systemName: "photo.badge.plus.fill")
-                            .foregroundColor(.primary)
+                            .foregroundColor(.white)
                     }
                     .padding()
                     .background(Color.green)

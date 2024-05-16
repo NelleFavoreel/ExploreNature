@@ -33,8 +33,6 @@ struct MapView: View {
                 
             }
             .padding(.top, -200.0)
-            
-            
             .edgesIgnoringSafeArea(.all)
             .frame(height: 700.0)
             .onAppear {
@@ -50,15 +48,19 @@ struct MapView: View {
                             self.selectedPark = nil // Gebruik `self` voor `selectedPark`
                         }) {
                             Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(.red)
+                                .foregroundColor(.black)
                                 .padding()
                         }
                         VStack(alignment: .leading) {
                             Text(park.name)
                                 .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.green)
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading) // Tekst uitlijnen naar links en breedte uitrekken
                             Text(park.city_name)
                                 .font(.subheadline)
                                 .multilineTextAlignment(.leading)
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading) // Tekst uitlijnen naar links en breedte uitrekken
                         }
                         .frame(width: 250.0)
                     }
