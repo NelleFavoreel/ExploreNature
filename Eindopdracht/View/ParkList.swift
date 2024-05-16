@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-
-
 struct ParkList: View {
     @StateObject var viewModel = ParkInfoViewModel()
 
@@ -17,22 +15,35 @@ struct ParkList: View {
         NavigationView {
             List(viewModel.posts) { park in
                 NavigationLink(destination: ParkDetail(park: park)) {
-                    VStack(alignment: .leading) {
-                        Text(park.name)
-                            .font(.title3)
-                            .foregroundColor(Color.green)
-                        Text(park.city_name)
-                            .font(.callout)
+                    HStack {
+                        // Placeholder voor een afbeelding
+                        Image(systemName: "tree.fill")
+                            .resizable(resizingMode: .stretch)
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.green)
+                            .padding(.trailing, 10)
+                        
+                        VStack(alignment: .leading) {
+                            Text(park.name)
+                                .font(.title3)
+                                .foregroundColor(.primary)
+                            Text(park.city_name)
+                                .font(.callout)
+                                .foregroundColor(.secondary)
+                        }
                     }
+                    .padding(.vertical, 5)
                 }
             }
-            .navigationTitle("Parken lijst")
+            .listStyle(InsetGroupedListStyle())
+            .navigationTitle("Parken in België")
             .onAppear {
                 viewModel.fetchPosts()
             }
         }
     }
 }
+
 
 #Preview {
     ParkList()

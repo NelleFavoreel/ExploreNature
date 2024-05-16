@@ -21,14 +21,16 @@ struct AccountPage: View {
     var body: some View {
         NavigationView {
             VStack {
-                
+                // Profielfoto
                 if let image = profileImage {
                     Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
+                        .frame(width: 120, height: 120)
                         .clipShape(Circle())
-                        .padding()
+                        .shadow(radius: 10)
+                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                        .padding(.top, 20)
                 } else {
                     Button(action: {
                         isShowingImagePicker = true
@@ -37,8 +39,8 @@ struct AccountPage: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .foregroundColor(Color.green)
-                            .frame(width: 100, height: 100)
-                            .padding()
+                            .frame(width: 120, height: 120)
+                            .padding(.top, 20)
                     }
                     .sheet(isPresented: $isShowingImagePicker) {
                         ImagePicker(image: $profileImage)
@@ -46,13 +48,16 @@ struct AccountPage: View {
                 }
 
                 Text(displayedName)
-                    .font(.largeTitle)
-                    .padding()
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.green)
+                    .padding(.top, 10)
 
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 20) {
                     HStack {
                         Text("Gegevens")
-                            .font(.title)
+                            .font(.headline)
+                            .fontWeight(.bold)
 
                         Spacer()
 
@@ -66,34 +71,53 @@ struct AccountPage: View {
                         }
                     }
 
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Naam")
-                            Text("Achternaam")
-                            Text("Woonplaats")
+                    VStack(alignment: .leading, spacing: 10) {
+                        HStack {
+                            Text("Naam:")
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                            Spacer()
+                            Text(name)
+                                .font(.subheadline)
                         }
 
-                        Spacer()
-
-                        VStack(alignment: .leading) {
-                            Text(name)
+                        HStack {
+                            Text("Achternaam:")
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                            Spacer()
                             Text(lastName)
+                                .font(.subheadline)
+                        }
+
+                        HStack {
+                            Text("Woonplaats:")
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                            Spacer()
                             Text(city)
+                                .font(.subheadline)
                         }
                     }
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
                 }
                 .padding()
 
                 if let lastUpdatedDate = lastUpdatedDate {
                     Text("Data laatst bijgewerkt: \(formattedLastUpdatedDate(date: lastUpdatedDate))")
-                        .font(.subheadline)
+                        .font(.footnote)
                         .foregroundColor(.gray)
-                        .padding()
+                        .padding(.top, 10)
                 }
 
                 Spacer()
             }
-            .navigationTitle("Account")
+            .padding()
+            .background(Color(UIColor.systemGroupedBackground).edgesIgnoringSafeArea(.all))
+            .navigationBarTitle("Account", displayMode: .inline)
         }
     }
 

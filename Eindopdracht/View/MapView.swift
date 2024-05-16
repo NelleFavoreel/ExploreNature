@@ -6,10 +6,9 @@
 //
 
 
-
 import SwiftUI
 import MapKit
- 
+
 let locationManager = CLLocationManager()
 
 struct MapView: View {
@@ -19,18 +18,18 @@ struct MapView: View {
     @State private var selectedPark: ParkInfo?
 
     var body: some View {
-        ZStack {
+        ZStack(alignment: .topTrailing) {
             Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: $userTrackingMode, annotationItems: viewModel.posts) { park in
                 MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(park.lat) ?? 0, longitude: Double(park.long) ?? 0)) {
                     Image(systemName: "tree.fill")
-                        .resizable()
                         .foregroundColor(Color.green)
                         .frame(width: 30, height: 30)
+                        .background(Circle().fill(Color.white).frame(width: 36, height: 36))
+                        .shadow(radius: 3)
                         .onTapGesture {
-                            self.selectedPark = park // Gebruik `self` voor `selectedPark`
+                            self.selectedPark = park
                         }
                 }
-                
             }
             .padding(.top, -200.0)
             .edgesIgnoringSafeArea(.all)
@@ -39,13 +38,12 @@ struct MapView: View {
                 viewModel.fetchPosts()
                 locationManager.requestWhenInUseAuthorization()
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             if let park = selectedPark {
-                VStack() {
+                VStack {
                     HStack {
                         Button(action: {
-                            self.selectedPark = nil // Gebruik `self` voor `selectedPark`
+                            self.selectedPark = nil
                         }) {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(.black)
@@ -56,13 +54,13 @@ struct MapView: View {
                                 .font(.headline)
                                 .fontWeight(.bold)
                                 .foregroundColor(Color.green)
-                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading) // Tekst uitlijnen naar links en breedte uitrekken
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                             Text(park.city_name)
                                 .font(.subheadline)
                                 .multilineTextAlignment(.leading)
-                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading) // Tekst uitlijnen naar links en breedte uitrekken
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         }
-                        .frame(width: 250.0)
+                        .frame(width: 250)
                     }
                     .padding()
                     .background(Color.white)
@@ -71,15 +69,15 @@ struct MapView: View {
                     .padding()
                 }
                 .onTapGesture {
-                    self.selectedPark = nil // Gebruik `self` voor `selectedPark`
+                    self.selectedPark = nil
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                .transition(.move(edge: .bottom))
+                .animation(.spring())
             }
         }
     }
 }
-
-
 
 #Preview {
     MapView()
