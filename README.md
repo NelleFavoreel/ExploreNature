@@ -2,6 +2,7 @@
 
 Welkom bij de Eindopdracht App. Deze app is ontworpen om gebruikers een overzicht te geven van verschillende parken op een kaart, een lijstweergave van parken en een gebruikersaccountpagina. De app detecteert ook de WiFi-verbinding van de gebruiker en toont een welkomstscherm bij de eerste lancering van de app.
 
+De gebruikte API: https://opendata.visitflanders.org/accessibility/attractions/nature_v2.json
 ## Features
 
 - Welkomstscherm: Een welkomstscherm dat alleen bij de eerste lancering van de app wordt weergegeven.
@@ -11,3 +12,9 @@ Welkom bij de Eindopdracht App. Deze app is ontworpen om gebruikers een overzich
 - Netwerkmonitoring: Detecteert de WiFi-verbinding van de gebruiker en toont een waarschuwing als er geen verbinding is. De app kan ook werken zonder internetverbinding adhv een locale database.
 
 Voor verdere vragen of ondersteuning, neem contact op met mij op. 
+
+## Gebruikte bronnen:
+- https://www.makeareadme.com/
+- ChatGPT.com
+- Stackoverflow.com
+- https://developer.apple.com/documentation/swiftui/
