@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct WelcomeView: View {
-    var onDiscover: () -> Void // Closure toegevoegd om te worden aangeroepen wanneer de gebruiker op de knop klikt
+    var onDiscover: () -> Void
 
     var body: some View {
         Image("logo2")
@@ -22,7 +22,6 @@ struct WelcomeView: View {
                 .multilineTextAlignment(.center)
                 .padding()
             Button(action: {
-                // Roep de closure aan wanneer de gebruiker op de knop klikt
                 onDiscover()
             }) {
                 Text("Ontdek de app")

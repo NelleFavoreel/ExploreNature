@@ -8,7 +8,6 @@ struct ParkDetail: View {
     
     init(park: ParkInfo) {
         self.park = park
-        // Initialiseer de region met de coördinaten van het park
         _region = State(initialValue: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: Double(park.lat) ?? 0, longitude: Double(park.long) ?? 0), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)))
     }
     
@@ -54,7 +53,6 @@ struct ParkDetail: View {
                 .padding(.horizontal)
                 
                 Button(action: {
-                    // Roep functie aan om foto toe te voegen
                     self.addPhoto()
                 }) {
                     HStack {
@@ -81,7 +79,7 @@ struct ParkDetail: View {
         }
         .navigationTitle("Park Detail")
     }
-    
+    //chatgpt heeft hier geholpen
     // Functie om foto toe te voegen
     private func addPhoto() {
         // Maak een UIImagePickerController aan

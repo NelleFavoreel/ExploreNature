@@ -27,13 +27,13 @@ struct MapView: View {
                         .background(Circle().fill(Color.white).frame(width: 36, height: 36))
                         .shadow(radius: 3)
                         .onTapGesture {
-                            self.selectedPark = park
+                            withAnimation {
+                                self.selectedPark = park
+                            }
                         }
                 }
             }
-            .padding(.top, -200.0)
-            .edgesIgnoringSafeArea(.all)
-            .frame(height: 700.0)
+            .edgesIgnoringSafeArea(.top)
             .onAppear {
                 viewModel.fetchPosts()
                 locationManager.requestWhenInUseAuthorization()
@@ -43,7 +43,9 @@ struct MapView: View {
                 VStack {
                     HStack {
                         Button(action: {
-                            self.selectedPark = nil
+                            withAnimation {
+                                self.selectedPark = nil
+                            }
                         }) {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(.black)
@@ -69,11 +71,12 @@ struct MapView: View {
                     .padding()
                 }
                 .onTapGesture {
-                    self.selectedPark = nil
+                    withAnimation {
+                        self.selectedPark = nil
+                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                 .transition(.move(edge: .bottom))
-                .animation(.spring())
             }
         }
     }
@@ -82,3 +85,4 @@ struct MapView: View {
 #Preview {
     MapView()
 }
+

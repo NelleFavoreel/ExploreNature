@@ -24,6 +24,7 @@ struct ContentView: View {
                     isFirstLaunch = false
                 }
             } else {
+                
                 TabView(selection: $selectionTab) {
                     MapView().tabItem {
                         Label("Map", systemImage: "map")
@@ -38,6 +39,7 @@ struct ContentView: View {
                     }.tag(3)
                 }
                 .accentColor(.blue)
+                
                 .alert(isPresented: $showingAlert) {
                     Alert(
                         title: Text("Geen WiFi-verbinding"),
@@ -51,7 +53,7 @@ struct ContentView: View {
             }
         }
     }
-
+    // chatgpt helpt for this
     private func checkNetworkStatus() {
         let monitor = NWPathMonitor()
         let queue = DispatchQueue(label: "NetworkMonitor")

@@ -117,6 +117,7 @@
 		480C5C282BB70C3A0041BAB6 /* Eindopdracht */ = {
 			isa = PBXGroup;
 			children = (
+				482B529E2BF8CB79006B3189 /* ViewModel */,
 				4854FAE62BBECFEF00EFA662 /* Model */,
 				480C5C532BB70C480041BAB6 /* Info.plist */,
 				480C5C292BB70C3A0041BAB6 /* EindopdrachtApp.swift */,
@@ -152,6 +153,14 @@
 			path = EindopdrachtUITests;
 			sourceTree = "<group>";
 		};
+		482B529E2BF8CB79006B3189 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				481AF6242BED2E6C006764ED /* ParkInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4854FAE32BBECE1C00EFA662 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +182,6 @@
 				4854FAE72BBED02600EFA662 /* ParkInfo.swift */,
 				48B682552BC421DB006E30F3 /* ViewModel.swift */,
 				481AF6222BED2E45006764ED /* LocalDataService.swift */,
-				481AF6242BED2E6C006764ED /* ParkInfoViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
